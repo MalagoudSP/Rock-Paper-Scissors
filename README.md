@@ -1,4 +1,4 @@
-## Rock-paper-Scissors
+## Rock-Paper-Scissors
 
 A simple yet fun Rock Paper Scissors game built with HTML, CSS, and JavaScript.  
 This project recreates the classic hand game in a modern web interface.  
