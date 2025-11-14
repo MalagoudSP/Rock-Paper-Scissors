@@ -9,34 +9,107 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section class="container">
-      <div class="result_field">
-        <div class="result_images">
-          <span class="user_result">
-            <img src="images/rock.png" alt="" />
-          </span>
-          <span class="cpu_result">
-            <img src="images/rock.png" alt="" />
-          </span>
-        </div>
-        <div class="result">Let's Play!!</div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="nav-title">Rock Paper Scissors</h1>
+        <button class="login-btn" onclick="toggleLoginForm()">Login</button>
+      </div>
+    </nav>
+
+    <!-- Landing Page Hero Section -->
+    <div class="landing-page">
+      <div class="hero-content">
+        <h2 class="hero-title">Challenge Yourself</h2>
+        <p class="hero-subtitle">Play the classic game and test your strategy</p>
+        <button class="cta-btn" onclick="toggleLoginForm()">Play Now</button>
       </div>
 
-      <div class="option_images">
-        <span class="option_image">
-          <img src="images/rock.png" alt="" />
-          <p>Rock</p>
-        </span>
-        <span class="option_image">
-          <img src="images/paper.png" alt="" />
-          <p>Paper</p>
-        </span>
-        <span class="option_image">
-          <img src="images/scissors.png" alt="" />
-          <p>Scissors</p>
-        </span>
+      <!-- Game Images Section -->
+      <div class="game-showcase">
+        <div class="showcase-card rock-card">
+          <div class="showcase-image">
+            <img src="rock.png" alt="Rock" />
+          </div>
+          <h3>Rock</h3>
+        </div>
+        <div class="showcase-card paper-card">
+          <div class="showcase-image">
+            <img src="paper.png" alt="Paper" />
+          </div>
+          <h3>Paper</h3>
+        </div>
+        <div class="showcase-card scissors-card">
+          <div class="showcase-image">
+            <img src="scissors.png" alt="Scissors" />
+          </div>
+          <h3>Scissors</h3>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="login-modal">
+      <div id="login-container" class="login-container">
+        <button class="close-btn" onclick="toggleLoginForm()">&times;</button>
+        <div class="login-wrapper">
+          <!-- Login Form -->
+          <div class="login-box">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username" />
+            <input type="password" id="password" placeholder="Password" />
+            <button onclick="login()">Login</button>
+            <p id="login-error"></p>
+            <p class="demo-text">Demo: username: <strong>player1</strong>, password: <strong>rps123</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Modal -->
+    <div id="game-modal" class="game-modal">
+      <div id="game-modal-content" class="game-modal-content">
+        <button class="game-close-btn" onclick="closeGameModal()">&times;</button>
+        
+        <div class="logout-container">
+          <p>Welcome, <span id="user-display"></span>!</p>
+          <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+
+        <section class="container">
+          <div class="result_field">
+            <div class="result_images">
+              <span class="user_result">
+                <img src="rock.png" alt="" />
+              </span>
+              <span class="cpu_result">
+                <img src="rock.png" alt="" />
+              </span>
+            </div>
+            <div class="result">Let's Play!!</div>
+          </div>
+
+          <div class="option_images">
+            <span class="option_image">
+              <img src="rock.png" alt="" />
+              <p>Rock</p>
+            </span>
+            <span class="option_image">
+              <img src="paper.png" alt="" />
+              <p>Paper</p>
+            </span>
+            <span class="option_image">
+              <img src="scissors.png" alt="" />
+              <p>Scissors</p>
+            </span>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Game Container (Hidden) -->
+    <div id="game-container" class="game-container" style="display: none;">
+    </div>
 
     <script src="script.js" defer></script>
   </body>
